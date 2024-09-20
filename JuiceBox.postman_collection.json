@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "cd6e619a-2d29-4a1d-acdc-bf658041ab20",
+		"name": "JuiceBox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20056776"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "POST Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{juicebox}}/register",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{juicebox}}/login",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|vriHPmmXIDFZ4WLqNbm95txnVUoXVHF6ChuAVHoE3f272f20",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{juicebox}}/logout",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|vriHPmmXIDFZ4WLqNbm95txnVUoXVHF6ChuAVHoE3f272f20",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{juicebox}}/users/:id",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "GET Posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|1ooMnpAjXbTPVaRF7N9Hi1AMXJ64TLlCRbEfloA590a87349",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{juicebox}}/posts",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Post By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|1ooMnpAjXbTPVaRF7N9Hi1AMXJ64TLlCRbEfloA590a87349",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{juicebox}}/posts/:id",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Store Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|sDynambT29ftZgpKiiKxWkp2xlc835NviWLqVxlCfaf4dd4f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "lorem ipsum",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lorem ipsum sit dolor amet amer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{juicebox}}/posts",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|sDynambT29ftZgpKiiKxWkp2xlc835NviWLqVxlCfaf4dd4f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "test edit",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test edit",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{juicebox}}/posts/:id?_method=PATCH",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"posts",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PATCH"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|sDynambT29ftZgpKiiKxWkp2xlc835NviWLqVxlCfaf4dd4f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{juicebox}}/posts/:id?_method=DELETE",
+							"host": [
+								"{{juicebox}}"
+							],
+							"path": [
+								"posts",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "DELETE"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "juicebox",
+			"value": "http://127.0.0.1:8000/api"
+		}
+	]
+}
